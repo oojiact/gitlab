@@ -1,0 +1,8 @@
+# 1.
+openssl genrsa -out mdw-devtools.key 2048
+
+# 2.
+openssl req -new -key "bas-devtools.key" -subj "/C=TH/ST=Bangkok/L=Prathumwan/O=DTAC/OU=Enterprise Infrastructure Department/CN=bas-devtools.tac.co.th" -out "bas-devtools.csr"
+
+# 3.
+openssl x509 -req -days 3650 -in "bas-devtools.csr" -signkey "bas-devtools.key" -out "bas-devtools.crt"
